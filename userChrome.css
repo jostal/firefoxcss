@@ -1,0 +1,126 @@
+/* VERTICAL BOOKMARKS */
+:root:not([inDOMFullscreen]){
+  --toolbar-bgcolor: rgba(35, 40, 45, 1) !important;
+}
+
+#PersonalToolbar {
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  width: 40px;
+
+  /* These create a empty area to the bottom of the toolbar, which is to mask a fact that we don't know exactly how high the toolbar should be */
+  height: 100vh;
+  max-height: 100vh !important; 
+  padding-bottom: 120px !important;
+  border: 1px solid rgba(30, 30, 30, 1);
+  padding-top: 10px;
+  /*! margin-top: 8px; */
+  
+}
+
+#personal-bookmarks{ overflow-y: auto; scrollbar-width: none;}
+
+#PersonalToolbar >  #personal-bookmarks > #PlacesToolbar > hbox { -moz-box-orient: vertical !important; }
+#PersonalToolbar #PlacesToolbarItems {
+  display: flex;
+  flex-direction: column;
+}
+#PersonalToolbar .toolbarbutton-1 { padding-block: 10px !important }
+#PersonalToolbar #PlacesToolbarItems > .bookmark-item { padding-block: 4px !important; }
+
+.bookmark-item {
+  margin-top: 6px !important;
+}
+
+:root:not([inDOMFullscreen]) body #browser {
+  margin-left: 40px;
+}
+
+
+
+
+/* CUSTOM BOOKMARK FOLDER ICONS */
+.bookmark-item[container="true"] [label="School"] {
+	list-style-image: url("https://cdn.discordapp.com/attachments/716396936416067619/997204505345138718/book-open-outline-filled.png") !important;
+}
+
+
+
+
+/* ONE LINE SEARCH AND TABS*/
+#TabsToolbar 
+{ 
+  margin-bottom: 0px !important;
+  margin-left: 42vw !important;
+}
+
+.titlebar-buttonbox-container {
+  margin-right: 14vw;
+}
+
+/* Nav bar*/
+#nav-bar 
+{ background: transparent !important;
+  margin-top: -40px !important;
+  margin-bottom: 4px !important;
+  margin-right: 72vw !important;
+  height: 35px !important;
+  padding-top: 0px !important;
+  font-size: 12px !important;
+  min-width: 42vw !important;
+  box-shadow: none !important;
+}
+
+
+#urlbar-container{ min-width: 20vw !important; max-width: 30vw !important;}
+
+/*Faviconize Tabs*/
+.tab-label-container { width: 10px;}
+.tabbrowser-tab[fadein]:not([style^="max-width"],[pinned]) {
+max-width: 120px !important;
+min-width: 80px !important;}
+.tab-background {
+  border-top: 0 !important;
+  margin-top: -10px !important;
+  border-radius: 10px !important;
+}
+.tab-close-button {
+  padding-inline-start: inherit !important;
+  width: 26px !important;
+}
+#tabs-newtab-button {
+  transform: translate(0, 3px)
+}
+
+.titlebar-button {
+  padding: 15px !important;
+}
+
+#PanelUI-menu-button > .toolbarbutton-badge-stack {
+    padding: 5px !important;}
+:root[uidensity="touch"] #PanelUI-menu-button > .toolbarbutton-badge-stack {
+    padding: 5px !important;}
+#PanelUI-menu-button > .toolbarbutton-badge-stack > .toolbarbutton-icon {
+    width: 20px !important;}
+
+
+/* Show favicon for tabs without favicons */
+.tabbrowser-tab:not([pinned]) .tab-icon-image:not([src]) {
+display: inline !important;
+list-style-image: url('./dot.png') !important;}
+
+.webextension-browser-action {
+  display: none;
+}
+
+.toolbarbutton-1 {
+  margin-bottom: 7px !important;
+}
+
+#customizableui-special-spring1, #customizableui-special-spring2 {
+  display: none;
+}
+
