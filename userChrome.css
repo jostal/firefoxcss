@@ -15,18 +15,18 @@
   height: 100vh;
   max-height: 100vh !important; 
   padding-bottom: 120px !important;
-  border: 1px solid rgba(30, 30, 30, 1);
-  padding-top: 10px;
-  /*! margin-top: 8px; */
+  
+  box-shadow: inset 0 2px 5px -2px black, 0 2px 5px black;
   
 }
 
 #personal-bookmarks{ overflow-y: auto; scrollbar-width: none;}
 
 #PersonalToolbar >  #personal-bookmarks > #PlacesToolbar > hbox { -moz-box-orient: vertical !important; }
-#PersonalToolbar #PlacesToolbarItems {
+#PlacesToolbarItems {
   display: flex;
   flex-direction: column;
+  margin-top: 5px !important;
 }
 #PersonalToolbar .toolbarbutton-1 { padding-block: 10px !important }
 #PersonalToolbar #PlacesToolbarItems > .bookmark-item { padding-block: 4px !important; }
@@ -35,10 +35,9 @@
   margin-top: 6px !important;
 }
 
-:root:not([inDOMFullscreen]) body #browser {
+:root:not([inDOMFullscreen]) body, :root:not([inDOMFullscreen]) #browser {
   margin-left: 40px;
 }
-
 
 
 
@@ -47,8 +46,14 @@
 	list-style-image: url("https://cdn.discordapp.com/attachments/716396936416067619/997204505345138718/book-open-outline-filled.png") !important;
 }
 
+#firefox-view-button {
+  margin-bottom: 3px !important;
+  padding-left: 0px !important;
+}
 
-
+#tabbrowser-tabs {
+  border-inline-start: 0 !important;
+}
 
 /* ONE LINE SEARCH AND TABS*/
 #TabsToolbar 
@@ -112,10 +117,6 @@ min-width: 80px !important;}
 display: inline !important;
 list-style-image: url('./dot.png') !important;}
 
-.webextension-browser-action {
-  display: none;
-}
-
 .toolbarbutton-1 {
   margin-bottom: 7px !important;
 }
@@ -124,3 +125,16 @@ list-style-image: url('./dot.png') !important;}
   display: none;
 }
 
+#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon[label]:not([label=""]) {
+  margin-inline-end: 0 !important;
+}
+
+#navigator-toolbox {
+  border: none !important;
+}
+
+#navigator-toolbox-background {
+  position: relative;
+  z-index: 3;
+  box-shadow: 2px 2px 5px black !important;
+}
