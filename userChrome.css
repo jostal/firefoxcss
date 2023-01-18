@@ -1,151 +1,79 @@
-/* VERTICAL BOOKMARKS */
-:root:not([inDOMFullscreen]){
-  --toolbar-bgcolor: rgba(35, 40, 45, 1) !important;
+/* GLOBAL VARIABLES */
+:root:not([inDOMFullscreen]) {
+  --titlebar-height: 44px;
+  --bookmark-width: 40px;
 }
 
+/* BOOKMARKS TOOLBAR */
 #PersonalToolbar {
   z-index: 1;
   position: fixed;
-  display: flex;
-  flex-direction: column;
   left: 0;
-  width: 40px;
-
-  /* These create a empty area to the bottom of the toolbar, which is to mask a fact that we don't know exactly how high the toolbar should be */
+  width: var(--bookmark-width);  
+  top: var(--titlebar-height);
   height: 100vh;
-  max-height: 100vh !important; 
+  max-height: 100vh !important;
   padding-bottom: 120px !important;
-  
-  box-shadow: inset 0 2px 5px -2px black, 0 2px 5px black;
-  margin-top: 43px !important;
-  
 }
 
-.titlebar-spacer {
-  display: none;
+#PersonalToolbar > #personal-bookmarks > #PlacesToolbar > hbox {
+  -mox-box-orient: vertical !important;
 }
 
-#customization-palette-container {
-  margin-left: 100px;
-}
-
-#nav-bar-overflow-button {
-  display: none;
-}
-
-#personal-bookmarks{ overflow-y: auto; scrollbar-width: none;}
-
-#PersonalToolbar >  #personal-bookmarks > #PlacesToolbar > hbox { -moz-box-orient: vertical !important; }
-#PersonalToolbar >  #personal-bookmarks > #PlacesToolbar {
-  min-width: 40px !important;
-}
-#PlacesChevron {
-  display: none;
-}
-.bookmark-item > label {
-  margin-left: 1em !important;
-}
 #PlacesToolbarItems {
   display: flex;
   flex-direction: column;
-  margin-top: 5px !important;
-}
-#PersonalToolbar .toolbarbutton-1 { padding-block: 10px !important }
-#PersonalToolbar #PlacesToolbarItems > .bookmark-item { padding-block: 4px !important; }
-
-.bookmark-item {
-  margin-top: 6px !important;
+  margin-top: 1em;
 }
 
+/* POPUP SEARCHBAR */
+#nav-bar {
+  margin-top: 0.3em !important;
+  z-index: -100;
+  transition: all 0.3s ease !important;
+  opacity: 0;
+  width: fit-content;
+  height: fit-content;
+  min-height: 50px !important;
+  padding: 0.3em;
+  align-self: center;
+  border-radius: 0.5em;
+  background-color: rgba(43, 42, 51, 0.9) !important;
+  
+}
+
+#urlbar-background {
+  opacity: 0.8;
+}
+
+#navigator-toolbox:focus-within > #nav-bar,
+#navigator-toolbox:hover > #nav-bar {
+  margin-top: 0;
+  margin-bottom: var(--titlebar-height);
+  z-index: 100;
+  opacity: 1;
+}
+
+#navigator-toolbox {
+  height: var(--titlebar-height) !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ShIFT BROWSER BY WIDTH OF BOOKMARK BAR */
 :root:not([inDOMFullscreen]) body, :root:not([inDOMFullscreen]) #browser {
-  margin-left: 40px;
+  margin-left: var(--bookmark-width);
 }
-
-
 
 /* CUSTOM BOOKMARK FOLDER ICONS */
 .bookmark-item[container="true"] [label="School"] {
-	list-style-image: url("https://cdn.discordapp.com/attachments/716396936416067619/997204505345138718/book-open-outline-filled.png") !important;
+	list-style-image: url("./icons/icon_school.png") !important;
 }
 
-#tabbrowser-tabs {
-  border-inline-start: 0 !important;
+.bookmark-item[container="true"] [label="Development"] {
+	list-style-image: url("./icons/icon_development.png") !important;
 }
 
-#navigator-toolbox {
-  display: flex;  
-  flex-direction: row-reverse!important;
-}
-
-.titlebar-buttonbox-container {
-  justify-self: flex-end;
-}
-
-#navigator-toolbox {
-  -webkit-flex: 1 !important;
-}
-
-/* Nav bar*/
-#nav-bar 
-{ background: transparent !important;
-  padding-top: 0px !important;
-  font-size: 12px !important;
-  box-shadow: none !important;
-  justify-self: flex-start;
-  min-width: fit-content;
-}
-
-#titlebar {
-  -webkit-flex: 1 !important;
-}
-
-#urlbar-container{ min-width: 20vw !important; max-width: 30vw !important;}
-
-/*Faviconize Tabs*/
-.tab-label-container { width: 10px;}
-.tabbrowser-tab[fadein]:not([style^="max-width"],[pinned]) {
-max-width: 120px !important;
-min-width: 80px !important;}
-.tab-background {
-  border-radius: 10px !important;
-}
-.tab-close-button {
-  padding-inline-start: inherit !important;
-  width: 26px !important;
-}
-
-.titlebar-button {
-  padding: 15px !important;
-}
-
-#PanelUI-menu-button > .toolbarbutton-badge-stack {
-    padding: 5px !important;}
-:root[uidensity="touch"] #PanelUI-menu-button > .toolbarbutton-badge-stack {
-    padding: 5px !important;}
-#PanelUI-menu-button > .toolbarbutton-badge-stack > .toolbarbutton-icon {
-    width: 20px !important;}
-
-
-/* Show favicon for tabs without favicons */
-.tabbrowser-tab:not([pinned]) .tab-icon-image:not([src]) {
-display: inline !important;
-list-style-image: url('./dot.png') !important;}
-
-
-#customizableui-special-spring1, #customizableui-special-spring2 {
-  display: none;
-}
-
-#PlacesToolbarItems > .bookmark-item > .toolbarbutton-icon[label]:not([label=""]) {
-  margin-inline-end: 0 !important;
-}
-
-#navigator-toolbox {
-  border: none !important;
-}
-
-#navigator-toolbox-background {
-  position: relative;
-  z-index: 3;
-  box-shadow: 2px 2px 5px black !important;
+.bookmark-item[container="true"] [label="Entertainment"] {
+	list-style-image: url("./icons/icon_entertainment.png") !important;
 }
