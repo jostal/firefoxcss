@@ -17,12 +17,34 @@
   padding-bottom: 120px !important;
   
   box-shadow: inset 0 2px 5px -2px black, 0 2px 5px black;
+  margin-top: 43px !important;
   
+}
+
+.titlebar-spacer {
+  display: none;
+}
+
+#customization-palette-container {
+  margin-left: 100px;
+}
+
+#nav-bar-overflow-button {
+  display: none;
 }
 
 #personal-bookmarks{ overflow-y: auto; scrollbar-width: none;}
 
 #PersonalToolbar >  #personal-bookmarks > #PlacesToolbar > hbox { -moz-box-orient: vertical !important; }
+#PersonalToolbar >  #personal-bookmarks > #PlacesToolbar {
+  min-width: 40px !important;
+}
+#PlacesChevron {
+  display: none;
+}
+.bookmark-item > label {
+  margin-left: 1em !important;
+}
 #PlacesToolbarItems {
   display: flex;
   flex-direction: column;
@@ -46,39 +68,36 @@
 	list-style-image: url("https://cdn.discordapp.com/attachments/716396936416067619/997204505345138718/book-open-outline-filled.png") !important;
 }
 
-#firefox-view-button {
-  margin-bottom: 3px !important;
-  padding-left: 0px !important;
-}
-
 #tabbrowser-tabs {
   border-inline-start: 0 !important;
 }
 
-/* ONE LINE SEARCH AND TABS*/
-#TabsToolbar 
-{ 
-  margin-bottom: 0px !important;
-  margin-left: 42vw !important;
+#navigator-toolbox {
+  display: flex;  
+  flex-direction: row-reverse!important;
 }
 
 .titlebar-buttonbox-container {
-  margin-right: 14vw;
+  justify-self: flex-end;
+}
+
+#navigator-toolbox {
+  -webkit-flex: 1 !important;
 }
 
 /* Nav bar*/
 #nav-bar 
 { background: transparent !important;
-  margin-top: -40px !important;
-  margin-bottom: 4px !important;
-  margin-right: 72vw !important;
-  height: 35px !important;
   padding-top: 0px !important;
   font-size: 12px !important;
-  min-width: 42vw !important;
   box-shadow: none !important;
+  justify-self: flex-start;
+  min-width: fit-content;
 }
 
+#titlebar {
+  -webkit-flex: 1 !important;
+}
 
 #urlbar-container{ min-width: 20vw !important; max-width: 30vw !important;}
 
@@ -88,16 +107,11 @@
 max-width: 120px !important;
 min-width: 80px !important;}
 .tab-background {
-  border-top: 0 !important;
-  margin-top: -10px !important;
   border-radius: 10px !important;
 }
 .tab-close-button {
   padding-inline-start: inherit !important;
   width: 26px !important;
-}
-#tabs-newtab-button {
-  transform: translate(0, 3px)
 }
 
 .titlebar-button {
@@ -117,9 +131,6 @@ min-width: 80px !important;}
 display: inline !important;
 list-style-image: url('./dot.png') !important;}
 
-.toolbarbutton-1 {
-  margin-bottom: 7px !important;
-}
 
 #customizableui-special-spring1, #customizableui-special-spring2 {
   display: none;
