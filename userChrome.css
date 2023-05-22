@@ -17,13 +17,22 @@
 }
 
 #PersonalToolbar > #personal-bookmarks > #PlacesToolbar > hbox {
-  -mox-box-orient: vertical !important;
+  -moz-box-orient: vertical !important;
 }
 
 #PlacesToolbarItems {
-  display: flex;
-  flex-direction: column;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
   margin-top: 1em;
+}
+
+.bookmark-item {
+  visibility: visible !important;
+  height: fit-content;
+}
+
+#PlacesChevron {
+  display: none;
 }
 
 /* POPUP SEARCHBAR */
